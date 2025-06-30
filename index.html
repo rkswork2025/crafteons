@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crafteons Technologies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-style: italic;
+            color: #ecf0f1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            aspect-ratio: 1/1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .service-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Service page styles */
+        .service-page {
+            display: none;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .service-page h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 0.5rem;
+        }
+
+        .service-page h3 {
+            color: #2c3e50;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background-color: #1a252f;
+        }
+
+        .course-list {
+            list-style-type: none;
+            margin: 1rem 0;
+        }
+
+        .course-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .course-list li:before {
+            content: "▹";
+            color: #2c3e50;
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 600px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-page {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Crafteons Technologies</h1>
+        <p class="tagline">Innovative Solutions for the Digital Age</p>
+    </header>
+    
+    <div class="container">
+        <div class="services" id="main-services">
+            <a href="#data" class="service-box">
+                <div class="service-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h2 class="service-title">Data</h2>
+                <p>Advanced data analytics and management solutions</p>
+            </a>
+            
+            <a href="#ai" class="service-box">
+                <div class="service-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h2 class="service-title">Devops</h2>
+                <p>Devops services</p>
+            </a>
+            
+            <a href="#programming" class="service-box">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h2 class="service-title">Programming</h2>
+                <p>Custom software development solutions</p>
+            </a>
+            
+            <a href="#cloud" class="service-box">
+                <div class="service-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h2 class="service-title">Cloud</h2>
+                <p>Cloud computing and infrastructure services</p>
+            </a>
+        </div>
+
+        <!-- Data Training Page -->
+        <div id="data" class="service-page">
+            <h2>Data Engineering Training Program</h2>
+            <p>Master the complete data lifecycle with our comprehensive training program designed by industry experts.</p>
+            
+            <h3>Course Modules:</h3>
+            <ul class="course-list">
+                <li>Data Analysis with Python and R</li>
+                <li>SQL and NoSQL Databases</li>
+                <li>Data Visualization (Power BI, Tableau)</li>
+                <li>Big Data Technologies (Hadoop, Spark)</li>
+                <li>Machine Learning Fundamentals</li>
+                <li>Data Engineering and Pipelines</li>
+            </ul>
+            
+            <h3>Program Details:</h3>
+            <p><strong>Duration:</strong> 12 weeks (3 months) intensive training</p>
+            <p><strong>Format:</strong> Online/In-person with hands-on projects</p>
+            <p><strong>Certification:</strong> Crafteons Certified Data Analyst</p>
+            
+            <a href="#" class="back-button">Back to Services</a>
+        </div>
+
+        <!-- AI Training Page -->
+        <div id="ai" class="service-page">
+            <h2>Devops</h2>
+            <p>Transform your career with our cutting-edge Devops training program covering the latest technologies.</p>
+            
+            <h3>Course Modules:</h3>
+            <ul class="course-list">
+                <li>Docker</li>
+                <li>Kubernetes</li>
+                <li>CI/CD</li>
+                <li>github</li>
+                <li>jenkins</li>
+                <li>MLOps</li>
+            </ul>
+            
+            <h3>Program Details:</h3>
+            <p><strong>Duration:</strong> 16 weeks (4 months) with capstone project</p>
+            <p><strong>Prerequisites:</strong> Basic programming knowledge</p>
+            <p><strong>Certification:</strong> Crafteons Certified Devops Engineer</p>
+            
+            <a href="#" class="back-button">Back to Services</a>
+        </div>
+
+        <!-- Programming Training Page -->
+        <div id="programming" class="service-page">
+            <h2>Programming Bootcamp</h2>
+            <p>Become a professional developer with our full-stack programming bootcamp.</p>
+            
+            <h3>Course Modules:</h3>
+            <ul class="course-list">
+                <li>HTML/CSS/JavaScript Fundamentals</li>
+                <li>Python/Java Programming</li>
+                <li>Web Frameworks (React, Django)</li>
+                <li>Database Design</li>
+                <li>APIs and Microservices</li>
+                <li>DevOps and Deployment</li>
+            </ul>
+            
+            <h3>Program Details:</h3>
+            <p><strong>Duration:</strong> 24 weeks (6 months) immersive program</p>
+            <p><strong>Outcome:</strong> Portfolio-ready projects</p>
+            <p><strong>Certification:</strong> Crafteons Certified Full-Stack Developer</p>
+            
+            <a href="#" class="back-button">Back to Services</a>
+        </div>
+
+        <!-- Cloud Training Page -->
+        <div id="cloud" class="service-page">
+            <h2>Cloud Computing Certification</h2>
+            <p>Master cloud technologies with our vendor-neutral and AWS/Azure focused training.</p>
+            
+            <h3>Course Modules:</h3>
+            <ul class="course-list">
+                <li>Cloud Fundamentals</li>
+                <li>AWS/Azure/GCP Services</li>
+                <li>Infrastructure as Code</li>
+                <li>Containerization (Docker, Kubernetes)</li>
+                <li>Cloud Security</li>
+                <li>Serverless Architectures</li>
+            </ul>
+            
+            <h3>Program Details:</h3>
+            <p><strong>Duration:</strong> 10 weeks with hands-on labs</p>
+            <p><strong>Preparation:</strong> For AWS/Azure certification exams</p>
+            <p><strong>Certification:</strong> Crafteons Cloud Architect</p>
+            
+            <a href="#" class="back-button">Back to Services</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Crafteons Technologies. All rights reserved.</p>
+        <p>Contact: info@crafteons.com | +1 (555) 123-4567</p>
+    </footer>
+
+    <script>
+        // Handle service page navigation
+        document.querySelectorAll('.service-box').forEach(box => {
+            box.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.getElementById('main-services').style.display = 'none';
+                document.querySelector(targetId).style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Handle back button
+        document.querySelectorAll('.back-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.service-page').forEach(page => {
+                    page.style.display = 'none';
+                });
+                document.getElementById('main-services').style.display = 'grid';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Handle initial page load with hash
+        window.addEventListener('load', function() {
+            const hash = window.location.hash;
+            if (hash && document.querySelector(hash)) {
+                document.getElementById('main-services').style.display = 'none';
+                document.querySelector(hash).style.display = 'block';
+            }
+        });
+
+        // Update URL hash when navigating
+        window.addEventListener('hashchange', function() {
+            if (!window.location.hash) {
+                document.querySelectorAll('.service-page').forEach(page => {
+                    page.style.display = 'none';
+                });
+                document.getElementById('main-services').style.display = 'grid';
+            }
+        });
+    </script>
+</body>
+</html>
